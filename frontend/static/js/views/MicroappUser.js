@@ -6,7 +6,10 @@ export default class {
     async getUsers() {
         let url = 'https://healthcare-bysean.herokuapp.com/viewprofile/3';
         try {
-            let res = await fetch(url);
+            let res = await fetch(url,{
+                method : "GET",
+                mode: 'cors'
+            });
             return await res.json();
         } catch (error) {
             console.log(error);
