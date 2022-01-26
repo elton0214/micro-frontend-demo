@@ -1,23 +1,24 @@
 
 export default class {
-    constructor() {
+    userid;
+
+    constructor(userid) {
+        // let userid = document.getElementById("userid").innerHTML;
+        this.userid = userid;
     }
 
     async getUsers() {
-        let url = 'https://healthcare-bysean.herokuapp.com/viewprofile/3';
+        let url = 'https://healthcare-bysean.herokuapp.com/viewprofile/'+this.userid;
         try {
-            let res = await fetch(url,{
-                method : "GET",
-                mode: 'cors'
-            });
+            let res = await fetch(url);
             return await res.json();
         } catch (error) {
             console.log(error);
         }
     }
     
-    async getHtml() {
-    // async renderUsers() {
+    // async getHtml() {
+    async renderUsers() {
         let user = await this.getUsers();
         let html = '';
         // users.forEach(user => {
@@ -34,4 +35,6 @@ export default class {
 
         return html;
     }
+
+     
 }
