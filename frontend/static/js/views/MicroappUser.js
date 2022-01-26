@@ -1,9 +1,8 @@
 
-export default class {
+export class MicroappUser{
     userid;
 
     constructor(userid) {
-        // let userid = document.getElementById("userid").innerHTML;
         this.userid = userid;
     }
 
