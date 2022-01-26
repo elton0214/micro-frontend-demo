@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Page App</title>
     <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/dropbutton.css">
 </head>
 <body>
     <nav class="nav">
@@ -13,17 +14,46 @@
         <a href="/settings" class="nav__link" data-link>Settings</a>
     </nav>
     <div id="microApp"></div>
-    ID:<div id="userid" style="display: inline">5</div>
+    ID:<div id="userid" style="display: inline">3</div>
     <script type="module" src="/static/js/index.js"></script>
     <div class="container"></div>
 
-    <style>
-        div.container {
-        border: 2px solid rgb(51, 51, 51);
-        border-radius: 5px;
-        padding: 5px;
-        width: 300px;
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">></button>
+        <div id="myDropdown" class="dropdown-content">
+            <optgroup label="英文姓名"></optgroup>
+            <option value="engname">David</option>
+            <optgroup label="學歷"></optgroup>
+            <option value="edu">大學</option>
+            <optgroup label="婚姻狀態"></optgroup>
+            <option value="marrystatus">已婚</option>
+            <optgroup label="子女數"></optgroup>
+            <option value="childnum">5</option>
+        </div>
+      </div>
+      
+      <script>
+      /* When the user clicks on the button, 
+      toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
         }
-    </style>
+      }
+      </script>
+
+    
 </body>
 </html>

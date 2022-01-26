@@ -3,20 +3,7 @@ import Posts from "./views/Posts.js";
 import PostView from "./views/PostView.js";
 import Settings from "./views/Settings.js";
 // import MicroappUsera from "./views/MicroappUser.js";
-import MicroappUser from "https://cdn.jsdelivr.net/gh/elton0214/micro-frontend-demo/frontend/static/js/views/MicroappUser.js"
-
-console.log("document.getElementById(\"userid\").innerHTML:"+document.getElementById("userid").innerHTML);
-
-// const microappUsera = new MicroappUsera(document.getElementById("userid").innerHTML);
-// const microappUsera = new MicroappUsera();
-// microappUsera.setId(document.getElementById("userid").innerHTML);
-// console.log("microappUsera:"+JSON.stringify (microappUsera));
-
-// const microappUserb = new defaultExport();
-// microappUserb.setId(document.getElementById("userid").innerHTML);
-// console.log("microappUserb:"+JSON.stringify (microappUserb));
-
-
+import MicroappUser from "https://cdn.jsdelivr.net/gh/elton0214/micro-frontend-demo@latest/frontend/static/js/views/MicroappUser.js"
 
 //pathToRegex(path)
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
@@ -67,13 +54,10 @@ const router = async () => {
 
     //change the text which id="app" with value "view" in const "routes"
     const view = new match.route.view(getParams(match));
-    // view.setName("defaulttName22");
     console.log(view);
     console.log(view.name);
     document.querySelector("#microApp").innerHTML = await view.getHtml();
 
-    // const microappUser = new MicroappUser();
-    // microappUser.setId("5");
     const microappUser = new MicroappUser(document.getElementById("userid").innerHTML);
     console.log("microappUser"+JSON.stringify (microappUser));
     console.log("microappUser.userid:"+microappUser.userid);

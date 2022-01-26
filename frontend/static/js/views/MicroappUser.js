@@ -2,11 +2,6 @@
 export default class MicroappUser{
     
     userid;
-    // userid=3;
-    // setId(userid) {
-    //     this.userid = userid;
-    // }
-    // constructor(){};
 
     constructor(userid) {
         this.userid = userid;
@@ -36,10 +31,7 @@ export default class MicroappUser{
     
             html += htmlSegment;
         // }
-        // );
 
         return html;
     }
-
-     
 }
