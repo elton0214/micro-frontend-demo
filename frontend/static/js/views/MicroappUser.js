@@ -1,6 +1,6 @@
 
 export default class MicroappUser{
-    userid;
+    userid=3;
 
     setId(userid) {
         this.userid = userid;
