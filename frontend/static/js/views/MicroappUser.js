@@ -1,16 +1,16 @@
 
 export default class MicroappUser{
-    userid=3;
-
-    setId(userid) {
-        this.userid = userid;
-    }
-
-    constructor(){};
-
-    // constructor(userid) {
+    
+    userid;
+    // userid=3;
+    // setId(userid) {
     //     this.userid = userid;
     // }
+    // constructor(){};
+
+    constructor(userid) {
+        this.userid = userid;
+    }
 
     async getUsers() {
         let url = 'https://healthcare-bysean.herokuapp.com/viewprofile/'+this.userid;

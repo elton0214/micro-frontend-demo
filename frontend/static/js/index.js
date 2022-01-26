@@ -2,9 +2,19 @@ import Dashboard from "./views/Dashboard.js";
 import Posts from "./views/Posts.js";
 import PostView from "./views/PostView.js";
 import Settings from "./views/Settings.js";
-import MicroappUser from "./views/MicroappUser.js";
-// import MicroappUser from "https://cdn.jsdelivr.net/gh/elton0214/micro-frontend-demo/frontend/static/js/views/MicroappUser.js"
+// import MicroappUsera from "./views/MicroappUser.js";
+import MicroappUser from "https://cdn.jsdelivr.net/gh/elton0214/micro-frontend-demo/frontend/static/js/views/MicroappUser.js"
 
+console.log("document.getElementById(\"userid\").innerHTML:"+document.getElementById("userid").innerHTML);
+
+// const microappUsera = new MicroappUsera(document.getElementById("userid").innerHTML);
+// const microappUsera = new MicroappUsera();
+// microappUsera.setId(document.getElementById("userid").innerHTML);
+// console.log("microappUsera:"+JSON.stringify (microappUsera));
+
+// const microappUserb = new defaultExport();
+// microappUserb.setId(document.getElementById("userid").innerHTML);
+// console.log("microappUserb:"+JSON.stringify (microappUserb));
 
 
 
@@ -36,7 +46,7 @@ const router = async () => {
         { path: "/posts", view: Posts },
         { path: "/posts/:id", view: PostView },
         { path: "/settings", view: Settings }
-        ,{ path: "/user", view: MicroappUser }
+        // ,{ path: "/user", view: MicroappUser }
     ];
 
     // Test each route for potential match
@@ -62,8 +72,11 @@ const router = async () => {
     console.log(view.name);
     document.querySelector("#microApp").innerHTML = await view.getHtml();
 
-    
+    // const microappUser = new MicroappUser();
+    // microappUser.setId("5");
     const microappUser = new MicroappUser(document.getElementById("userid").innerHTML);
+    console.log("microappUser"+JSON.stringify (microappUser));
+    console.log("microappUser.userid:"+microappUser.userid);
     document.querySelector(".container").innerHTML = await microappUser.renderUsers();
     
 };
