@@ -1,5 +1,5 @@
 
-export class MicroappUser{
+export default class MicroappUser{
     userid;
 
     constructor(userid) {
