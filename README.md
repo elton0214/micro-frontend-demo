@@ -15,3 +15,9 @@ To give the completed code a quick test-drive:
 3. Open `localhost` in a web browser, using the port specified in `server.js` e.g. http://localhost:5060/
 
 > Refer to the **YouTube Tutorial** for step-by-step instructions to create the code. Enjoy! :)
+>
+> 
+
+### Import & use a micro-app
+
+![image-20220127175455195](C:\Users\USER\AppData\Roaming\Typora\typora-user-images\image-20220127175455195.png)
